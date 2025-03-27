@@ -1,7 +1,15 @@
-import type { NextConfig } from "next";
+// import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+// const nextConfig: NextConfig = {
+//   /* config options here */
+// };
+
+// export default nextConfig;
+
+module.exports = {
+  experimental: {
+    appDir: true, // Enable app directory support (if you're using the app directory structure)
+  },
+  // Optionally, you can also specify custom directories here if needed
 };
 
-export default nextConfig;
