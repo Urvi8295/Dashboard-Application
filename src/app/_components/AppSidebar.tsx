@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 interface AppSidebarProps {
   setIsMobileOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -14,6 +15,16 @@ const AppSidebar: React.FC<AppSidebarProps> = ({ setIsMobileOpen }) => {
   const toggleSubmenu = () => {
     setIsSubmenuOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (
+      pathname === "/products" ||
+      pathname === "/products/[slug]" ||
+      pathname === "/products/add-product"
+    ) {
+      setIsSubmenuOpen(true);
+    }
+  }, [pathname]);
 
   return (
     <div
@@ -31,9 +42,15 @@ const AppSidebar: React.FC<AppSidebarProps> = ({ setIsMobileOpen }) => {
             </span>
           </button>
 
-          <div className="flex items-center justify-center mb-4">
-            <span className="material-symbols-outlined mr-2">dashboard</span>
-            <div className="text-xl font-semibold">Admin</div>
+          <div className="flex items-center ml-5 mb-4">
+            <Image
+              width={40}
+              height={32}
+              className="mr-4"
+              src="Logo.svg"
+              alt="Logo"
+            />
+            <div className="text-xl font-semibold">Mytech</div>
           </div>
         </div>
 
@@ -47,23 +64,33 @@ const AppSidebar: React.FC<AppSidebarProps> = ({ setIsMobileOpen }) => {
                   : "text-gray-700"
               } hover:bg-blue-200 hover:text-blue-700 `}
             >
-              <span className="material-symbols-outlined mr-2">dashboard</span>{" "}
+              <Image
+                width={25}
+                height={25}
+                className="mr-2"
+                src={"dashboard.svg"}
+                alt="Dashboard"
+              />
               Dashboard
             </Link>
           </li>
           <li>
             <button
               onClick={toggleSubmenu}
-              className={`flex items-center justify-between w-full py-2.5 px-4 text-left ${
-                pathname === "/products" || pathname === "/products/add-product"
+              className={`flex items-center justify-between w-full py-2.5 px-4 text-left border-l-0 border-white ${
+                pathname.startsWith("/products")
                   ? "bg-blue-200 text-blue-700"
                   : "text-gray-700"
               } hover:bg-blue-200 hover:text-blue-700`}
             >
               <div className="flex items-center">
-                <span className="material-symbols-outlined mr-2">
-                  shopping_cart
-                </span>
+                <Image
+                  width={28}
+                  height={28}
+                  className="mr-2"
+                  src="Ecommerce.svg"
+                  alt="E-commerce"
+                />{" "}
                 <span className="font-medium">E-commerce</span>
               </div>
 
@@ -98,8 +125,7 @@ const AppSidebar: React.FC<AppSidebarProps> = ({ setIsMobileOpen }) => {
                   <Link
                     href="/products"
                     className={`flex items-center py-2.5 px-4 pl-11 ${
-                      pathname === "/products" ||
-                      pathname === "/products/add-product"
+                      pathname.startsWith("/products")
                         ? "bg-blue-200 text-blue-700 border-l-4 border-blue-800"
                         : "text-gray-700"
                     } hover:bg-blue-200 hover:text-blue-700 `}
@@ -126,13 +152,19 @@ const AppSidebar: React.FC<AppSidebarProps> = ({ setIsMobileOpen }) => {
           <li className="mb-2">
             <Link
               href="/"
-              className={`flex items-center py-2.5 px-4 ${
+              className={`flex items-center py-2.5 px-4  border-l-4 border-white ${
                 pathname === "/projects"
                   ? "bg-blue-200 text-blue-700 border-l-4 border-blue-800"
                   : "text-gray-700"
               } hover:bg-blue-200 hover:text-blue-700 `}
             >
-              <span className="material-symbols-outlined mr-2">task</span>{" "}
+              <Image
+                width={20}
+                height={20}
+                className="mr-2"
+                src="project.svg"
+                alt="Projects"
+              />
               Projects
             </Link>
           </li>
@@ -140,13 +172,19 @@ const AppSidebar: React.FC<AppSidebarProps> = ({ setIsMobileOpen }) => {
           <li className="mb-2">
             <Link
               href="/"
-              className={`flex items-center py-2.5 px-4 ${
+              className={`flex items-center py-2.5 px-4  border-l-4 border-white ${
                 pathname === "/files"
                   ? "bg-blue-200 text-blue-700 border-l-4 border-blue-800"
                   : "text-gray-700"
               } hover:bg-blue-200 hover:text-blue-700 `}
             >
-              <span className="material-symbols-outlined mr-2">folder</span>{" "}
+              <Image
+                width={20}
+                height={20}
+                className="mr-2"
+                src="files.svg"
+                alt="Files"
+              />
               File Manager
             </Link>
           </li>
@@ -154,14 +192,20 @@ const AppSidebar: React.FC<AppSidebarProps> = ({ setIsMobileOpen }) => {
           <li className="mb-2">
             <Link
               href="/"
-              className={`flex items-center py-2.5 px-4 ${
-               pathname === "/chats"
+              className={`flex items-center py-2.5 px-4  border-l-4 border-white ${
+                pathname === "/chats"
                   ? "bg-blue-200 text-blue-700 border-l-4 border-blue-800"
                   : "text-gray-700"
               } hover:bg-blue-200 hover:text-blue-700 `}
             >
-              <span className="material-symbols-outlined mr-2">chat</span>{" "}
-              Logout
+              <Image
+                width={20}
+                height={20}
+                className="mr-2"
+                src="chat.svg"
+                alt="Chats"
+              />{" "}
+              Chats
             </Link>
           </li>
         </ul>

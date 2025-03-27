@@ -66,9 +66,7 @@ const Products: React.FC = () => {
           ))}
         </div>
 
-        {/* Right Section (Search, Date Picker, Filter, Edit Column) */}
         <div className="flex flex-wrap gap-3 items-center justify-start lg:justify-end">
-          {/* Search Input */}
           <div className="relative flex-1 lg:w-auto">
             <label
               htmlFor="default-search"
@@ -104,19 +102,16 @@ const Products: React.FC = () => {
             </div>
           </div>
 
-          {/* Date Picker Button */}
           <div className="flex items-center p-2 text-[13px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700">
             <span className="material-symbols-outlined mr-1.5">date_range</span>{" "}
             <span>Select Date</span>
           </div>
 
-          {/* Filter Button */}
           <button className="inline-flex text-[13px] items-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2 text-theme-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200 cursor-pointer">
             <span className="material-symbols-outlined">tune</span>
             Filter
           </button>
 
-          {/* Edit Column Button */}
           <button className="inline-flex items-center text-[13px] gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2 text-theme-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200 cursor-pointer">
             Edit Column
           </button>

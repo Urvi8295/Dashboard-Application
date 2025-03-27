@@ -52,7 +52,7 @@ export default function SalesSource() {
   };
 
   return (
-    <div className="rounded-2xl border border-gray-200 dark:border-gray-800 dark:bg-white/[0.03]">
+    <div className="rounded-2xl flex-grow border border-gray-200 dark:border-gray-800 dark:bg-white/[0.03]">
       <div className="rounded-2xl px-5 pt-5 bg-white shadow-default pb-6 dark:bg-gray-900 sm:px-6 sm:pt-6">
         <div className="flex justify-between">
           <div>

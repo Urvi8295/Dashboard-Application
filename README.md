@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Live Dashboard App
+
+This project is a live dashboard application built with Next.js, focusing on a clean and maintainable design perspective.
+
+## Project Structure
+
+The project is organized to promote code readability and maintainability. Here's a breakdown of the key directories:
+
+* **`src/app/`**: Contains the main application code.
+    * **`components/`**: Houses reusable UI components.
+    * **`layouts/`**: Stores different layout components, such as `AdminLayout`. Future layouts (e.g., `StaticSiteLayout`) can be added here.
+    * **`common/`**: Contains commonly used components that are shared across various parts of the application.
+    * **`ui/`**: Stores predefined UI components for consistent design elements.
+* **`src/app/page.js`**: The main page component of the application.
+* **`src/app/layout.js`**: The root layout component that wraps all pages.
+* **`public/`**: Contains static assets like images, SVGs, and fonts.
+* **`package.json`**: Lists project dependencies and scripts.
+* **`package-lock.json`**: Records the exact versions of installed dependencies.
+
+## Key Concepts
+
+* **Component-Based Architecture:** The application is built using reusable components to enhance modularity and maintainability.
+* **Layout Management:** Different layouts are used to provide consistent structures for various sections of the application.
+* **Common Components:** Frequently used components are centralized in the `common` folder for easy reuse.
+* **UI Library:** The `ui` folder allows for the creation of a predefined UI library, ensuring consistent design across the application.
+
+If we have more types than we can create types.d.ts files and also we can manage json data in diffrent folder for whole project.
 
 ## Getting Started
 
-First, run the development server:
+1.  **Clone the repository:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    ```bash
+    git clone <repository-url>
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2.  **Navigate to the project directory:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    ```bash
+    cd <project-directory>
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3.  **Install dependencies:**
 
-## Learn More
+    ```bash
+    npm install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+4.  **Run the development server:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    npm run dev
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5.  **Open your browser and navigate to `http://localhost:3000` to view the application.**
 
-## Deploy on Vercel
+## Running the Application
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **`npm run dev`**: Starts the development server.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Dependencies
+
+This project uses the following key dependencies:
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+
+
+
+
+

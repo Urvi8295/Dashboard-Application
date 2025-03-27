@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 interface AppHeaderProps {
@@ -13,22 +14,18 @@ const AppHeader: React.FC<AppHeaderProps> = ({ setIsMobileOpen, isMobile }) => {
     setIsMobileOpen(true);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDiv = () => {
-    setIsOpen((prev) => !prev);
-  };
 
   return (
     <header
       className={`sticky top-0 flex w-full bg-white border-gray-200 z-${
         isMobile ? "50" : "99999"
       } px-${
-        isMobile ? "6" : "0"
+        isMobile ? "5" : "0"
       } dark:border-gray-800 dark:bg-gray-900 lg:border-b`}
     >
       {" "}
-      <div className="flex items-center justify-between grow lg:flex-row lg:px-6">
+      <div className="flex items-center justify-between lg:flex-row lg:px-6 w-full">
         {isMobile ? (
           <button
             onClick={toggleMobileSidebar}
@@ -37,7 +34,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({ setIsMobileOpen, isMobile }) => {
             <span className="material-symbols-outlined text-2xl">menu</span>
           </button>
         ) : (
-          <div className="flex items-center justify-between w-full gap-2 px-3 py-3 border-b border-gray-200 dark:border-gray-800 sm:gap-4 lg:justify-normal lg:border-b-0 lg:px-0 lg:py-4">
+          <div className="flex items-center justify-between gap-2 px-3 py-3 border-b border-gray-200 dark:border-gray-800 sm:gap-4 lg:justify-normal lg:border-b-0 lg:px-0 lg:py-4">
             <form className="max-w-md">
               <label
                 htmlFor="default-search"
@@ -46,7 +43,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({ setIsMobileOpen, isMobile }) => {
                 Search
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <div className="absolute  inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <svg
                     className="w-4 h-4 text-gray-500 dark:text-gray-400"
                     aria-hidden="true"
@@ -77,9 +74,21 @@ const AppHeader: React.FC<AppHeaderProps> = ({ setIsMobileOpen, isMobile }) => {
         <div className="flex gap-3 items-center">
           {!isMobile && (
             <>
-              <span className="material-symbols-outlined">date_range</span>{" "}
-              <span className="material-symbols-outlined">notifications</span>{" "}
-              <span className="material-symbols-outlined">mail</span>{" "}
+              <Image width={23} height={15} src="date.svg" alt="Dates" />{" "}
+              <div className="relative">
+                <Image
+                  width={17}
+                  height={20}
+                  src="notification.svg"
+                  alt="Notification"
+                />{" "}
+                <span
+                  className={`absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 text-center rounded-full text-[10px] text-white bg-red-500`}
+                >
+                  2
+                </span>
+              </div>
+              <Image width={17} height={10} src="email.svg" alt="Mail" />{" "}
               <div className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-300 text-white text-2xl"></div>
             </>
           )}
@@ -93,7 +102,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({ setIsMobileOpen, isMobile }) => {
               />
             </div>
 
-            <div className="flex flex-col cursor-pointer" onClick={toggleDiv}>
+            <div className="flex flex-col cursor-pointer">
               <span className="font-semibold text-sm whitespace-nowrap">
                 Jenil Patel
               </span>
@@ -102,20 +111,10 @@ const AppHeader: React.FC<AppHeaderProps> = ({ setIsMobileOpen, isMobile }) => {
 
             <span
               className="material-symbols-outlined text-sm cursor-pointer"
-              onClick={toggleDiv}
               style={{ margin: "0" }}
             >
               keyboard_arrow_down
             </span>
-
-            {isOpen && (
-              <div className="absolute top-15 right-0 p-4 w-40 bg-white border border-gray-300 shadow-lg">
-                <div>Hello , jenil</div>
-                <button onClick={toggleDiv} className="mt-2 text-blue-500">
-                  Close
-                </button>
-              </div>
-            )}
           </div>
         </div>
       </div>

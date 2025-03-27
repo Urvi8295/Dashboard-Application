@@ -28,7 +28,6 @@ function AdminLayout({
     };
   }, []);
 
-  console.log(isMobileOpen)
 
 
  
@@ -49,7 +48,6 @@ function AdminLayout({
       <AppSidebar setIsMobileOpen={setIsMobileOpen} />
     </div>
   
-    {/* Main Content */}
     <div
       className={`flex-1 flex flex-col transition-all duration-300 ease-in-out ${mainContentMargin} overflow-x-hidden`}
     >

@@ -10,6 +10,7 @@ import TopProduct from "./_components/TopProduct";
 import TopCategory from "./_components/TopCategory";
 import RecentOrders from "./_components/RecentOrder";
 import CustomerGrowth from "./_components/CustomerGrowth";
+import Image from "next/image";
 
 const Dashboard: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,7 @@ const Dashboard: React.FC = () => {
             className="flex items-center p-2 cursor-pointer text-[13px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
             onClick={toggleDiv}
           >
-            <span className="material-symbols-outlined mr-1.5">date_range</span>{" "}
+            <Image width={23} height={15} src="date.svg" alt="Dates" />{" "}
             <span>Select Date</span>
           </div>
           {isOpen && (
@@ -47,33 +48,31 @@ const Dashboard: React.FC = () => {
           )}
         </div>
       </div>
-
       <div className="grid grid-cols-12 gap-4 md:gap-6">
         <EcommerceMetrics />
 
-        <div className="col-span-12 xl:col-span-4">
+        <div className="col-span-12 xl:col-span-4 flex flex-col">
           <MonthlyTarget />
         </div>
-        <div className="col-span-12 xl:col-span-8">
+        <div className="col-span-12 xl:col-span-8 flex flex-col">
           <StatisticsChart />
         </div>
 
-        <div className="col-span-12 xl:col-span-4">
+        <div className="col-span-12 xl:col-span-4 flex flex-col">
           <SalesSource />
         </div>
-        <div className="col-span-12 xl:col-span-4">
+        <div className="col-span-12 xl:col-span-4 flex flex-col">
           <TopProduct />
         </div>
-        <div className="col-span-12 xl:col-span-4">
+        <div className="col-span-12 xl:col-span-4 flex flex-col">
           <TopCategory />
         </div>
 
-        <div className="col-span-12 xl:col-span-8">
-          {" "}
-          <RecentOrders />{" "}
+        <div className="col-span-12 xl:col-span-8 flex flex-col">
+          <RecentOrders />
         </div>
 
-        <div className="col-span-12 xl:col-span-4">
+        <div className="col-span-12 xl:col-span-4 flex flex-col">
           <CustomerGrowth />
         </div>
       </div>

@@ -6,8 +6,10 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
+import { useRouter } from "next/navigation";
 
 export default function ProductList() {
+  const router = useRouter();
   interface Product {
     id: number;
     name: string;
@@ -166,6 +168,9 @@ export default function ProductList() {
     },
   ];
 
+  const handleClick = (id: Number) => {
+    router.push(`/products/${id}`);
+  };
   return (
     <div className="max-w-full overflow-x-auto">
       <Table>
@@ -297,7 +302,10 @@ export default function ProductList() {
                   <span className="material-symbols-outlined cursor-pointer">
                     visibility
                   </span>
-                  <span className="material-symbols-outlined cursor-pointer">
+                  <span
+                    className="material-symbols-outlined cursor-pointer"
+                    onClick={() => handleClick(product.id)}
+                  >
                     edit
                   </span>
                   <span className="material-symbols-outlined cursor-pointer">
