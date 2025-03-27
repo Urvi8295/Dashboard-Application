@@ -10,22 +10,22 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 export default function StatisticsChart() {
   const options: ApexOptions = {
     legend: {
-      show: false, // Hide legend
+      show: false,
       position: "top",
       horizontalAlign: "left",
     },
-    colors: ["#FFA500", "#0000FF"], // Define line colors
+    colors: ["#FFA500", "#0000FF"], 
     chart: {
       fontFamily: "Outfit, sans-serif",
       height: 310,
-      type: "line", // Set the chart type to 'line'
+      type: "line", 
       toolbar: {
-        show: false, // Hide chart toolbar
+        show: false, 
       },
     },
     stroke: {
-      curve: "smooth", // Define the line style (straight, smooth, or step)
-      width: [2, 2], // Line width for each dataset
+      curve: "smooth", 
+      width: [2, 2], 
     },
 
     fill: {
@@ -81,24 +81,24 @@ export default function StatisticsChart() {
         "Dec",
       ],
       axisBorder: {
-        show: false, // Hide x-axis border
+        show: false, 
       },
       axisTicks: {
-        show: false, // Hide x-axis ticks
+        show: false,
       },
       tooltip: {
-        enabled: false, // Disable tooltip for x-axis points
+        enabled: false, 
       },
     },
     yaxis: {
       labels: {
         style: {
-          fontSize: "12px", // Adjust font size for y-axis labels
-          colors: ["#6B7280"], // Color of the labels
+          fontSize: "12px", 
+          colors: ["#6B7280"], 
         },
       },
       title: {
-        text: "", // Remove y-axis title
+        text: "", 
         style: {
           fontSize: "0px",
         },

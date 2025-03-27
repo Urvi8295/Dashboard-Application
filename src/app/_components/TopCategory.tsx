@@ -50,12 +50,11 @@ export default function TopCategory() {
       "bg-orange-500 text-white",
       "bg-teal-500 text-white",
     ];
-  
+
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     return randomColor;
   };
 
-  
   return (
     <div className="rounded-2xl flex-grow border border-gray-200 dark:border-gray-800 dark:bg-white/[0.03]">
       <div className="rounded-2xl px-5 pt-5 bg-white shadow-default pb-6 dark:bg-gray-900 sm:px-6 sm:pt-6">
@@ -89,11 +88,6 @@ export default function TopCategory() {
             </div>
             <div className="flex items-center gap-1.5 ml-4 text-gray-800">
               <span className="text-[14px] font-medium">{phone.price}</span>
-              {/* <span
-                className={`inline-flex items-center text-[12px] text-center px-2 py-0.5 rounded-lg ${getRandomColorClass()}`}
-              >
-                {phone.tag}
-              </span>{" "} */}
             </div>
           </div>
         ))}

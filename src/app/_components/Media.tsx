@@ -10,18 +10,6 @@ const Media = () => {
     }
   };
 
-  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    if (event.dataTransfer.files) {
-      const files = Array.from(event.dataTransfer.files);
-      setImages((prevImages) => [...prevImages, ...files]);
-    }
-  };
-
-  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
-    event.preventDefault();
-  };
-
   const handleRemoveImage = (index: number) => {
     const updatedImages = images.filter((_, i) => i !== index);
     setImages(updatedImages);
@@ -31,12 +19,10 @@ const Media = () => {
     <div className="border border-gray-300 rounded-md p-4 shadow-sm">
       <h3 className="text-l font-bold text-gray-700 mb-4">Media</h3>
 
-      {/* Photo Upload Section */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Photo
         </label>
-        {/* Display uploaded images */}
         <div className="border-2 border-dashed border-gray-300 p-3">
           <div className="grid grid-cols-4 gap-4">
             {images.map((image, index) => (
@@ -56,19 +42,16 @@ const Media = () => {
               </div>
             ))}
           </div>
-          {/* Drag and Drop Area */}
-          <div
-            className="p-4 text-center rounded-md cursor-pointer"
-            onDrop={handleDrop}
-            onDragOver={handleDragOver}
-          >
+          <div className="p-4 text-center rounded-md cursor-pointer">
             <div className="mb-4">
-              <p className="text-gray-500 text-xs mb-4">Drag and drop your image here, or click add image</p>
+              <p className="text-gray-500 text-xs mb-4">
+                Drag and drop your image here, or click add image
+              </p>
 
               <label
                 htmlFor="file-upload"
                 className="flex items-center px-2 py-2 text-[14px] bg-blue-200 text-blue-800  cursor-pointer rounded-md hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                style={{margin : "auto" , width: "fit-content" }}
+                style={{ margin: "auto", width: "fit-content" }}
               >
                 <span className="material-symbols-outlined">add</span>
                 <span>Add Photo</span>

@@ -3,19 +3,13 @@ import Image from "next/image";
 
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
-import { ApexOptions } from "apexcharts";
 
-// Dynamically import ReactApexChart to avoid SSR issues
-const ReactApexChart = dynamic(() => import("react-apexcharts"), {
-  ssr: false,
-});
 export default function CustomerGrowth() {
   const countryData = [
     { country: "USA", customers: "2,379 Customers", progress: "79%" },
     { country: "Japan", customers: "1,240 Customers", progress: "60%" },
     { country: "France", customers: "1,240 Customers", progress: "49%" },
     { country: "Germany", customers: "1,240 Customers", progress: "100%" },
-    // { country: "South Korea", customers: "1,240 Customers", progress: "50%" },
   ];
   return (
     <div className="rounded-2xl flex-grow border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] sm:p-6">
